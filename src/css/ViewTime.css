@@ -1,0 +1,72 @@
+.pomodoro {
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 5% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.pomo-timer {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 7em;
+  padding: 15% 0;
+}
+
+.pomo-button {
+  display: flexbox;
+
+  margin: 0 20%;
+  justify-content: space-between;
+  padding: 3% 0;
+}
+
+.pomo-button button {
+  margin: 3%;
+  width: 40%;
+  padding: 10px 0px;
+  background: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.pomo-total {
+  /* margin: 10% 0; */
+}
+
+@media screen and (max-width: 450px) {
+  .pomodoro {
+    height: 35vh;
+  }
+
+  .pomo-timer {
+    font-size: 5em;
+    padding: 5% 0;
+  }
+
+  .pomo-button {
+    display: flex;
+
+    margin: 0;
+    justify-content: space-between;
+    padding: 3% 0;
+  }
+
+  .pomo-button button {
+    margin: 1%;
+    width: 40%;
+    padding: 10px 0px;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .pomodoro {
+    display: none;
+  }
+}

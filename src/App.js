@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
 
+import "./App.css";
+import ViewTime from "./components/ViewTime";
+import Todo from "./components/Todo";
+import { Button } from "react-bootstrap";
+import Setting from "./components/Setting";
 function App() {
+  const [modalOn, setModalOn] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <div className="App-header">
+        <Button variant="primary" onClick={() => setModalOn(true)}>
+          Setting
+        </Button>
+        <Setting show={modalOn} onHide={() => setModalOn(false)} />
+      </div> */}
+
+      <ViewTime />
+
+      <Todo />
     </div>
   );
 }
