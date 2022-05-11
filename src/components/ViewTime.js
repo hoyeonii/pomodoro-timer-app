@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import "../css/ViewTime.css";
+import logo from "../logo.png";
 
 function ViewTime() {
   // Renderer callback with condition
@@ -45,6 +46,7 @@ function ViewTime() {
   return (
     <div className="pomodoro">
       <div className="pomo-message">
+        <img src={logo} alt="logo" className="pomo-logo" />
         {studying ? (
           <div>Focus!</div>
         ) : (
