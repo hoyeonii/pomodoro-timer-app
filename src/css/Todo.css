@@ -14,6 +14,37 @@
   font-size: 3em;
   border-bottom: 1px dashed white;
 }
+.todo-options {
+  margin: 0 10%;
+  display: flex;
+  justify-content: space-between;
+}
+.todo-category {
+  /* border: 1px solid aqua; */
+  width: 100%;
+  text-align: left;
+}
+.todo-options label {
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 2px 3%;
+  margin: 0 5px;
+  font-weight: 600;
+}
+.todo-category > label:last-child {
+  opacity: 0.5;
+}
+.todo-category > label:last-child:hover {
+  opacity: 1;
+}
+.todo-dndMessage {
+  visibility: hidden;
+}
+
+.todo:hover .todo-dndMessage {
+  visibility: visible;
+}
 
 .todo-list {
   /* border-top: 1px dashed white;
@@ -42,7 +73,7 @@
   /* border-top: 1px dashed white; */
 }
 input[type="checkbox"] {
-  content: "✔";
+  content: "";
   width: 20px;
   height: 18px;
   margin: 0;
@@ -51,13 +82,14 @@ input[type="checkbox"] {
   -o-appearance: none;
   appearance: none;
   outline: 2px solid white;
+  border-radius: 2px;
   box-shadow: none;
   font-size: 2em;
   background-color: white;
 }
-input[type="checkbox"]:checked {
+/* input[type="checkbox"]:checked {
   background-color: rgb(255, 119, 119);
-}
+} */
 input[type="checkbox"]:checked .todo-check {
   visibility: hidden;
 }
