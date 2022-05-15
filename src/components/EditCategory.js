@@ -7,6 +7,9 @@ function EditCategory({ categoryList, setCategoryList }) {
   const handleAddCategory = () => {
     if (!text) {
       return;
+    } else if (categoryList.includes(text)) {
+      alert(`${text} already exists`);
+      return;
     }
     setText("");
     setCategoryList([...categoryList, text]);

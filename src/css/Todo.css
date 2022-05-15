@@ -22,8 +22,24 @@
 .todo-category {
   /* border: 1px solid aqua; */
   width: 100%;
+  height: 45px;
   text-align: left;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  /* word-wrap: normal; */
 }
+.todo-category::-webkit-scrollbar {
+  width: 5px; /*스크롤바의 너비*/
+}
+
+.todo-category::-webkit-scrollbar-thumb {
+  background-color: white;
+  background-clip: padding-box;
+  border: 7px solid transparent;
+  border-radius: 20px 0;
+}
+
 .todo-options label {
   cursor: pointer;
   border: 1px solid white;
@@ -110,13 +126,18 @@ input[type="checkbox"]:checked .todo-check {
 .todo-addTask {
   padding: 20px 0px;
 
-  margin: 0px 20%;
+  margin: 0px 10%;
 
   display: flex;
 }
-
+.todo-select {
+  color: rgb(255, 65, 65);
+  border: none;
+  outline: none;
+}
 .todo-addTask-input {
-  width: 100%;
+  width: 80%;
+  margin: 0 3%;
   background: none;
   border: none;
   border-bottom: 1px solid white;

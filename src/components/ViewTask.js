@@ -8,10 +8,18 @@ function ViewTask({ category, todoList, setTodoList }) {
 
   const handleDrop = (droppedItem) => {
     if (!droppedItem.destination) return;
-    var updatedList = [...todoList];
+    let updatedList = [...todoList];
     const [reorderedItem] = updatedList.splice(droppedItem.source.index, 1);
     updatedList.splice(droppedItem.destination.index, 0, reorderedItem);
     setTodoList(updatedList);
+  };
+
+  const handleUpdate = (id) => {
+    let updatedList = [...todoList];
+    updatedList.forEach((todo) => {
+      if (todo.id === id) {
+      }
+    });
   };
   return (
     <DragDropContext onDragEnd={handleDrop}>
@@ -89,9 +97,20 @@ function ViewTask({ category, todoList, setTodoList }) {
                             color: "white",
                             cursor: "pointer",
                           }}
+                          onClick={() => handleUpdate(item.id)}
+                        >
+                          <i class="fa-solid fa-pen"></i>
+                        </button>
+                        <button
+                          style={{
+                            background: "none",
+                            border: "none",
+                            color: "white",
+                            cursor: "pointer",
+                          }}
                           onClick={() => handleDelete(item.id)}
                         >
-                          x
+                          <i class="fa-solid fa-trash-can"></i>
                         </button>
                       </div>
                     </div>

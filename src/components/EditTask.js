@@ -7,12 +7,9 @@ function EditTask({ category, categoryList, todoList, setTodoList }) {
   useEffect(() => {
     setSelectedOption(category);
   }, [category]);
-  // const categoryOptions = ["All", ...categoryList];
   const categoryOptions =
     categoryList.length === 0 ? ["All"] : ["All", ...categoryList];
   const handleAddTask = (e) => {
-    // e.preventDefault();
-    // console.log(e.target.value);
     if (!text) {
       return;
     }
@@ -26,15 +23,6 @@ function EditTask({ category, categoryList, todoList, setTodoList }) {
         category: selectedOption,
       },
     ]);
-    // console.log([
-    //   ...todoList,
-    //   {
-    //     id: new Date().getMilliseconds(),
-    //     task: text,
-    //     done: false,
-    //     category: selectedOption,
-    //   },
-    // ]);
   };
   return (
     <>
@@ -61,7 +49,11 @@ function EditTask({ category, categoryList, todoList, setTodoList }) {
             e.preventDefault();
             handleAddTask();
           }}
-          style={{ width: "100%" }}
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
         >
           <select
             onChange={(e) => {
@@ -69,6 +61,7 @@ function EditTask({ category, categoryList, todoList, setTodoList }) {
               setSelectedOption(e.target.value);
             }}
             value={selectedOption}
+            className="todo-select"
           >
             {categoryOptions.map((el) => (
               <option>{el}</option>
@@ -89,7 +82,6 @@ function EditTask({ category, categoryList, todoList, setTodoList }) {
           type="submit"
           // onClick={handleAddTask}
           style={{
-            marginLeft: "10px",
             background: "none",
             color: "white",
             border: "1px solid white",
@@ -99,7 +91,7 @@ function EditTask({ category, categoryList, todoList, setTodoList }) {
           +
         </button>
       </div>
-      Task
+      Task{" "}
       {
         todoList
           .filter((todo) =>
@@ -112,7 +104,7 @@ function EditTask({ category, categoryList, todoList, setTodoList }) {
         todoList.filter((todo) =>
           category === "All" ? true : todo.category === category
         ).length
-      }
+      }{" "}
       complete
     </>
   );

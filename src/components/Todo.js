@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../css/Todo.css";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+
 import EditTask from "./EditTask";
 import EditCategory from "./EditCategory";
 
@@ -78,13 +78,13 @@ function Todo() {
           setCategoryList={setCategoryList}
         />
       )}
-      <button
+      {/* <button
         onClick={() => {
           console.log(todoList);
         }}
       >
         click me
-      </button>
+      </button> */}
     </div>
   );
 }
