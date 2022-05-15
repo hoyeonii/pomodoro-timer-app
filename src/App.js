@@ -3,8 +3,6 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import ViewTime from "./components/ViewTime";
 import Todo from "./components/Todo";
-import { Button } from "react-bootstrap";
-import Setting from "./components/Setting";
 function App() {
   window.onscroll = function () {
     console.log(window.innerHeight);

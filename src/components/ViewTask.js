@@ -14,13 +14,13 @@ function ViewTask({ category, todoList, setTodoList }) {
     setTodoList(updatedList);
   };
 
-  const handleUpdate = (id) => {
-    let updatedList = [...todoList];
-    updatedList.forEach((todo) => {
-      if (todo.id === id) {
-      }
-    });
-  };
+  // const handleUpdate = (id) => {
+  //   let updatedList = [...todoList];
+  //   updatedList.forEach((todo) => {
+  //     if (todo.id === id) {
+  //     }
+  //   });
+  // };
   return (
     <DragDropContext onDragEnd={handleDrop}>
       <Droppable droppableId="list-container">
@@ -90,17 +90,7 @@ function ViewTask({ category, todoList, setTodoList }) {
                         >
                           {item.task}
                         </div>
-                        <button
-                          style={{
-                            background: "none",
-                            border: "none",
-                            color: "white",
-                            cursor: "pointer",
-                          }}
-                          onClick={() => handleUpdate(item.id)}
-                        >
-                          <i class="fa-solid fa-pen"></i>
-                        </button>
+
                         <button
                           style={{
                             background: "none",

@@ -4,7 +4,7 @@
   padding: 5% 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   /* background-color: rgb(253, 77, 77); */
   background: linear-gradient(135deg, rgb(255, 65, 65), rgb(255, 143, 143));
 }
@@ -16,7 +16,7 @@
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-size: 7em;
-  padding: 15% 0;
+  /* padding: 15% 0; */
 }
 
 .pomo-button {
@@ -43,7 +43,7 @@
 
 @media screen and (max-width: 450px) {
   .pomodoro {
-    height: 35vh;
+    height: 100vh;
   }
 
   .pomo-timer {
@@ -73,6 +73,6 @@
 
 @media screen and (max-height: 600px) {
   .pomodoro {
-    display: none;
+    /* display: none; */
   }
 }

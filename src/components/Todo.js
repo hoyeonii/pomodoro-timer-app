@@ -8,62 +8,81 @@ function Todo() {
   const [modeViewTodo, setmodeViewTodo] = useState(true);
   const [todoList, setTodoList] = useState([]);
   const [category, setCategory] = useState("All");
-  const [categoryList, setCategoryList] = useState([]);
+  const [categoryList, setCategoryList] = useState(["Work", "Life", "Family"]);
 
   return (
     <div className="todo">
-      <div className="todo-header">Todo</div>
-      <div className="todo-options">
-        <div className="todo-category">
-          <label
-            onClick={() => {
-              setmodeViewTodo(true);
-              setCategory("All");
-            }}
-            style={{
-              backgroundColor:
-                modeViewTodo && category === "All" ? "white" : "transparent",
-              color:
-                modeViewTodo && category === "All"
-                  ? "rgb(255, 65, 65)"
-                  : "white",
-              opacity: modeViewTodo ? 1 : 0.5,
-            }}
-          >
-            All
-          </label>
-          {categoryList.map((el) => (
+      <div className="todo-header">
+        <h1>Todo</h1>
+
+        <div className="todo-options">
+          <div className="todo-category">
             <label
               onClick={() => {
                 setmodeViewTodo(true);
-                setCategory(el);
+                setCategory("All");
               }}
               style={{
                 backgroundColor:
-                  modeViewTodo && category === el ? "white" : "transparent",
+                  modeViewTodo && category === "All" ? "white" : "transparent",
                 color:
-                  modeViewTodo && category === el
+                  modeViewTodo && category === "All"
                     ? "rgb(255, 65, 65)"
                     : "white",
                 opacity: modeViewTodo ? 1 : 0.5,
               }}
             >
-              {el}
+              All
             </label>
-          ))}
+            {categoryList.length > 0 ? (
+              <select
+                onChange={(e) => {
+                  setmodeViewTodo(true);
+                  setCategory(e.target.value);
+                }}
+                className="todo-category-select"
+                style={{
+                  backgroundColor:
+                    modeViewTodo && category !== "All"
+                      ? "white"
+                      : "rgb(255, 65, 65)",
+                  color:
+                    modeViewTodo && category !== "All"
+                      ? "rgb(255, 65, 65)"
+                      : "white",
+                  opacity: modeViewTodo ? 1 : 0.5,
+                }}
+              >
+                {categoryList.map((el, i) => (
+                  <option
+                    key={i}
+                    className="todo-category-option"
+                    style={{
+                      opacity: modeViewTodo ? 1 : 0.5,
+                    }}
+                  >
+                    {el}
+                  </option>
+                ))}
+              </select>
+            ) : (
+              <div></div>
+            )}
+          </div>
+          <label
+            onClick={() => {
+              setmodeViewTodo(false);
+            }}
+            style={{
+              backgroundColor: !modeViewTodo ? "white" : "transparent",
+              color: !modeViewTodo ? "rgb(255, 65, 65)" : "white",
+              opacity: !modeViewTodo ? 1 : 0.5,
+              // height: "20px",
+            }}
+          >
+            <i class="fa-solid fa-pencil"></i>
+          </label>
         </div>
-        <label
-          onClick={() => {
-            setmodeViewTodo(false);
-          }}
-          style={{
-            backgroundColor: !modeViewTodo ? "white" : "transparent",
-            color: !modeViewTodo ? "rgb(255, 65, 65)" : "white",
-            opacity: !modeViewTodo ? 1 : 0.5,
-          }}
-        >
-          edit
-        </label>
       </div>
       {modeViewTodo ? (
         <EditTask
