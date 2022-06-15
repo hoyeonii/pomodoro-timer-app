@@ -6,7 +6,6 @@
   flex-direction: column;
   justify-content: space-between;
   /* background-color: rgb(253, 77, 77); */
-  background: linear-gradient(135deg, rgb(255, 65, 65), rgb(255, 143, 143));
 }
 .pomo-logo {
   width: 200px;

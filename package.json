@@ -1,6 +1,7 @@
 {
   "name": "tomotomo",
   "version": "0.1.0",
+  "homepage": "https://hoyeonii.github.io/pomodoro-timer-app/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",

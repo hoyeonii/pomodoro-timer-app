@@ -5,7 +5,6 @@ import ViewTime from "./components/ViewTime";
 import Todo from "./components/Todo";
 function App() {
   window.onscroll = function () {
-    console.log(window.innerHeight);
     // console.log(this.scrollY);
     if (window.pageYOffset < 100 && window.pageYOffset > 50) {
       window.scrollTo({ top: window.innerHeight });
