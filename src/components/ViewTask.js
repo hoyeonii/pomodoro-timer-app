@@ -14,13 +14,6 @@ function ViewTask({ category, todoList, setTodoList }) {
     setTodoList(updatedList);
   };
 
-  // const handleUpdate = (id) => {
-  //   let updatedList = [...todoList];
-  //   updatedList.forEach((todo) => {
-  //     if (todo.id === id) {
-  //     }
-  //   });
-  // };
   return (
     <DragDropContext onDragEnd={handleDrop}>
       <Droppable droppableId="list-container">
@@ -55,9 +48,7 @@ function ViewTask({ category, todoList, setTodoList }) {
                           id={`checkbox${index}`}
                           onChange={() => {
                             const list = [];
-                            // const indexofTodo = todoList.indexof(
-                            //   todoList.find((el) => el.id === item.id)
-                            // );
+                       
                             const indexofTodo = todoList
                               .map((el) => el.id)
                               .indexOf(item.id);

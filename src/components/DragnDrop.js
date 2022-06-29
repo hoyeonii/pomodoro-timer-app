@@ -2,7 +2,6 @@ import React from "react";
 import { useDrag } from "react-dnd";
 
 function DragnDrop({ todo, i, todoList, setTodoList, handleDelete }) {
-  //   console.log(todoList);
   const [{ isDragging }, drag] = useDrag(
     () => ({
       type: "div",

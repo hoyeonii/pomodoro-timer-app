@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../css/Todo.css";
 
 import EditTask from "./EditTask";
@@ -80,7 +80,7 @@ function Todo() {
               // height: "20px",
             }}
           >
-            <i class="fa-solid fa-pencil"></i>
+            <i className="fa-solid fa-pencil"></i>
           </label>
         </div>
       </div>

@@ -9,7 +9,7 @@ function EditTask({ category, categoryList, todoList, setTodoList }) {
   }, [category]);
   const categoryOptions =
     categoryList.length === 0 ? ["All"] : ["All", ...categoryList];
-  const handleAddTask = (e) => {
+  const handleAddTask = () => {
     if (!text) {
       return;
     }
@@ -44,7 +44,7 @@ function EditTask({ category, categoryList, todoList, setTodoList }) {
       </div>
       <div className="todo-addTask">
         <form
-          type="submit"
+          data-type="submit"
           onSubmit={(e) => {
             e.preventDefault();
             handleAddTask();
@@ -80,7 +80,6 @@ function EditTask({ category, categoryList, todoList, setTodoList }) {
         </form>
         <button
           type="submit"
-          // onClick={handleAddTask}
           style={{
             background: "none",
             color: "white",

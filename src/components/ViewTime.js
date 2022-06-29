@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import ReactDOM from "react-dom";
 import "../css/ViewTime.css";
 import logo from "../logo.png";
 
@@ -95,8 +94,8 @@ function ViewTime() {
         </button>
         <button
           onClick={() => {
-            let minutes = studying ? 5 : 25; //24 : 4;
-            let seconds = studying ? 0 : 0; //5;
+            let minutes = studying ? 5 : 25;
+            let seconds = studying ? 0 : 0; 
 
             setSeconds(seconds);
             setMinutes(minutes);

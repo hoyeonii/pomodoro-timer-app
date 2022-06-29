@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import "./App.css";
 import ViewTime from "./components/ViewTime";
-import Todo from "./components/Todo";
+import Todo from "./components/Todo.tsx";
 function App() {
   window.onscroll = function () {
-    // console.log(this.scrollY);
     if (window.pageYOffset < 100 && window.pageYOffset > 50) {
       window.scrollTo({ top: window.innerHeight });
     }
